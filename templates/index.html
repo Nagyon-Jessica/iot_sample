@@ -1,0 +1,27 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flask with matplotlib</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    function drawGraph() {
+        var plotdata = document.getElementById('plotimg');
+        $.get("/plot", function(data) {
+            plotdata.src = "data:image/png:base64," + data;
+        });
+    };
+    $(document).ready(function() {
+        //initialize components
+        drawGraph();
+    });
+    </script>
+</head>
+
+<body>
+    <h1>Plot Graph</h1>
+    <img id=plotimg></img>
+</body>
+
+</html>
