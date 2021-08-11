@@ -49,7 +49,7 @@ def plot_graph():
     ax[0,1].plot(date1, humid1, color='green', label='Device1: humidity')
     ax[1,0].plot(date2, temp2, label='Device2: temperature')
     ax[1,1].plot(date2, humid2, color='green', label='Device2: humidity')
-    xfmt = mdates.DateFormatter("%m-%d")
+    xfmt = mdates.DateFormatter("%m-%d\n%H:%M:%S")
     for i in range(2):
         for j in range(2):
             if i == 0:
