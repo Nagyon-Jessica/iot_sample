@@ -19,6 +19,7 @@ def plot_graph():
     try:
         print("Azure Blob Storage v" + __version__ + " - Python quickstart sample")
         connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
+        print(connect_str)
     
         blob_service_client = BlobServiceClient.from_connection_string(connect_str)
         container_client = blob_service_client.get_container_client("iot")
