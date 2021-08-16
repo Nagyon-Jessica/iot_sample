@@ -19,7 +19,6 @@ def plot_graph():
     try:
         print("Azure Blob Storage v" + __version__ + " - Python quickstart sample")
         connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
-        print(connect_str)
     
         blob_service_client = BlobServiceClient.from_connection_string(connect_str)
         container_client = blob_service_client.get_container_client("iot")
@@ -32,7 +31,6 @@ def plot_graph():
                 packet = json.loads(j)
                 t = datetime.datetime.fromisoformat(packet['EnqueuedTimeUtc'][:-2] + '+09:00')
                 body = json.loads(base64.standard_b64decode(packet['Body']).decode())
-                print(body)
                 if body["deviceId"] == "Device1":
                     date1.append(t)
                     temp1.append(body["temperature"])
