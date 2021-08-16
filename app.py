@@ -1,6 +1,5 @@
-import io, os, uuid, json, base64, datetime, urllib
+import io, os, json, base64, datetime, urllib
 import matplotlib
-# matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from matplotlib.backends.backend_agg import FigureCanvasAgg
@@ -32,6 +31,7 @@ def plot_graph():
                 packet = json.loads(j)
                 t = datetime.datetime.fromisoformat(packet['EnqueuedTimeUtc'][:-2] + '+09:00')
                 body = json.loads(base64.standard_b64decode(packet['Body']).decode())
+                print(body)
                 if body["deviceId"] == "Device1":
                     date1.append(t)
                     temp1.append(body["temperature"])
