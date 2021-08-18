@@ -51,10 +51,10 @@ def plot_graph():
     xfmt = mdates.DateFormatter("%m-%d\n%H:%M:%S")
     for i in range(2):
         for j in range(2):
-            if i == 0:
-                ax[i,j].set_xlim(date1[0] - datetime.timedelta(days=1), date1[-1] + datetime.timedelta(days=1))
-            else:
-                ax[i,j].set_xlim(date2[0] - datetime.timedelta(days=1), date2[-1] + datetime.timedelta(days=1))
+            # if i == -1:
+            #     ax[i,j].set_xlim(date1[0] - datetime.timedelta(days=1), date1[-1] + datetime.timedelta(days=1))
+            # else:
+            #     ax[i,j].set_xlim(date2[0] - datetime.timedelta(days=1), date2[-1] + datetime.timedelta(days=1))
             ax[i,j].legend(loc='upper right')
             ax[i,j].xaxis.set_major_formatter(xfmt)
     canvas = FigureCanvasAgg(fig)
